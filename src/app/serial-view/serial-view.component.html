@@ -1,0 +1,20 @@
+<h1>Test para {{ name }}!</h1>
+  <div>
+  <select id="ports"
+  [(ngModel)]="selectedPort"
+  (change)="onChange($event.target)"
+  >
+  
+    <option disabled>Click 'Agregar'...</option>
+    <option *ngFor="let port of portOptions" [ngValue]="port" >
+      {{port.text}}</option>
+  </select>
+  <button id="connect" (click)="getSelectedPort()"  >Agregar</button>
+  </div>
+
+  <div>
+    <button type="button" (click)="connect()">Conectar</button>
+  </div>
+  <div>
+    <button type="button" (click)="close()">Desconectar</button>
+  </div>

@@ -1,24 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
-import { ProductListComponent } from './product-list/product-list.component';
+
+import { SerialListComponent } from './serial-list.component/serial-list.component';
+import { SerialViewComponent } from './serial-view/serial-view.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
+      { path: '', component: SerialListComponent },
     ])
   ],
   declarations: [
     AppComponent,
-    TopBarComponent,
-    ProductListComponent
+    SerialViewComponent,
+    SerialListComponent
   ],
   bootstrap: [
     AppComponent
